@@ -59,7 +59,7 @@ WSGI_APPLICATION = 'Portal_EDU.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prueba' ,
+        'NAME': 'apoloDB' ,
         'USER': 'root' ,
         'PASSWORD': '',
         'HOST': '',

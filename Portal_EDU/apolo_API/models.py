@@ -178,7 +178,7 @@ class TblClasses(models.Model):
     max_capacity_class = models.IntegerField(db_column='maxCapacityClass', blank=True, null=True)  # Field name made lowercase.
     quantity_class = models.IntegerField(db_column='quantityClass', blank=True, null=True)  # Field name made lowercase.
     id_grade = models.ForeignKey('TblGrades', db_column='idGrade')  # Field name made lowercase.
-    id_course = models.ForeignKey('TblGourses', db_column='idCourse')  # Field name made lowercase.
+    id_course = models.ForeignKey('TblCourses', db_column='idCourse')  # Field name made lowercase.
     enable_class = models.BooleanField(db_column='enableClass')  # Field name made lowercase.
 
     class Meta:
@@ -198,7 +198,7 @@ class TblContactTypes(models.Model):
 
 class TblContacts(models.Model):
     id_contact = models.BigIntegerField(db_column='idContact', primary_key=True)  # Field name made lowercase.
-    phone_contact = models.PhoneNumberField(db_column='phoneContact', max_length=15)  # Field name made lowercase.
+    phone_contact = models.CharField(db_column='phoneContact', max_length=15)  # Field name made lowercase.
     id_contact_type = models.ForeignKey('TblContactTypes', db_column='idContactType')  # Field name made lowercase.
     enable_contact = models.BooleanField(db_column='enableContact')  # Field name made lowercase.
 

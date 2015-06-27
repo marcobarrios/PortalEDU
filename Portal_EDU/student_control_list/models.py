@@ -2,7 +2,7 @@ from django.db import models
 
 class StudentControlList(models.Model):
 	id_student_control_list = models.BigIntegerField(primary_key=True)
-	year = models.IntegerField(blank=True)
-	gpa = models.FloatField(blank=True)
+	year = models.PositiveIntegerField(blank=True)
+	gpa = models.DecimalField(blank=True, max_digits=5, decimal_places=2)
 	approved = models.BooleanField(default=0)
 	enable_student_control_list = models.BooleanField(default=1)

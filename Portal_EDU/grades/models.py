@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+class Grade(models.Model):
+	id_grade = BigIntegerField(primary_key=True)
+	enable_grade = BooleanField(default=1)

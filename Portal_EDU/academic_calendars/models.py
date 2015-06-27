@@ -9,3 +9,6 @@ class AcademicCalendar(models.Model):
     delivery_date = models.DateTimeField(blank=True, null=True)
     need_file = models.BooleanField(default=0)
     enable_academic_calendar = models.BooleanField(default=1)
+
+    assignment = models.ForeignKey('assignments.Assignment')
+    course = models.ForeignKey('courses.Course')

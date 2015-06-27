@@ -8,3 +8,5 @@ class StudentReport(models.Model):
     checked_report = models.BooleanField(blank=True, null=True)
     date_time_checked_report = models.DateTimeField(blank=True, null=True)
     enable_student_report = models.BooleanField(default=1)
+
+    student = models.ForeignKey('students.Student')

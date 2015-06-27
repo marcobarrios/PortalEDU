@@ -9,3 +9,6 @@ class StaffAppointment(models.Model):
     confirmation_staff_appointment = models.BooleanField(default=0)
     status_staff_appointment = models.BooleanField(default=1)
     enable_staff_appointment = models.BooleanField(default=1) 
+
+    student = models.ForeignKey('students.Student')
+    staff = models.ForeignKey('staffs.Staff')

@@ -16,3 +16,9 @@ class Staff(models.Model):
     title_staff = models.CharField(max_length=45, blank=True)
     cv_file_staff = models.FileField(upload_to='staff_cv_files/%Y/%m/%d/', blank=True)
     enable_staff = models.BooleanField(default=1)
+
+    genre = models.ForeigKey('genres.Genre')
+    blood_type = models.ForeigKey('blood_types.BloodType')
+    medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
+    contacts = models.ManyToManyField('contacts.Contact')
+    staff_activities = models.ManyToManyField('staff_activities.StaffActivity')

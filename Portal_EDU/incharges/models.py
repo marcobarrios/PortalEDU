@@ -11,3 +11,7 @@ class Incharge(models.Model):
     profession_incharge = models.CharField(max_length=45, blank=True)
     work_name_incharge = models.CharField(max_length=45, blank=True)
     enable_incharge = models.BooleanField(default=1)
+
+    incharge_type = models.ForeignKey('incharge_types.InchargeType')
+    genre = models.ForeignKey('genres.Genre')
+    

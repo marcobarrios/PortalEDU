@@ -9,3 +9,6 @@ class InchargeAppointment(models.Model):
     confirmation_incharge_appointment = models.BooleanField(default=0)
     status_incharge_appointment = models.BooleanField(default=1)
     enable_incharge_appointment = models.BooleanField(default=1)
+
+    staff = models.ForeignKey('staffs.Staff')
+    student = models.ForeignKey('students.Student')

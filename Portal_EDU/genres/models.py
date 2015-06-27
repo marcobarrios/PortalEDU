@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Genre(models.Model):
+    id_genre = models.BigIntegerField(primary_key=True)
+    genre = models.CharField(max_length=20)
+    enable_genre = models.BooleanField(default=1)

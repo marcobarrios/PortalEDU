@@ -1,7 +1,6 @@
 from django.db import models
 
 class School(models.Model):
-    id_school = models.BigIntegerField(primary_key=True, editable=False)
     name_school = models.CharField(max_length=45)
     phone_school = models.CharField(max_length=45, blank=True)
     address_school = models.CharField(max_length=45, blank=True)
@@ -9,3 +8,6 @@ class School(models.Model):
     vission_school = models.TextField(blank=True, null=True)
     mission_school = models.TextField(blank=True, null=True)
     enable_school = models.BooleanField(default=1)
+
+    def __unicode__(self):
+    	return self.name_school

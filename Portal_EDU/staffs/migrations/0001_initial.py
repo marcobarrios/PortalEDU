@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Staff',
             fields=[
-                ('id_staff', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('image_staff', models.ImageField(null=True, upload_to=b'staff_images/%Y/%m/%d/', blank=True)),
                 ('code_staff', models.CharField(max_length=45, blank=True)),
                 ('first_name_staff', models.CharField(max_length=45)),

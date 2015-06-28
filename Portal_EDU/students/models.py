@@ -1,7 +1,6 @@
 from django.db import models
 
 class Student(models.Model):
-    id_student = models.BigIntegerField(primary_key=True, editable=False)
     image_student = models.ImageField(upload_to='student_images/%Y/%m/%d/', blank=True)
     code_student = models.CharField(max_length=45, blank=True) 
     first_name_student = models.CharField(max_length=45) 
@@ -16,3 +15,6 @@ class Student(models.Model):
     incharges = models.ManyToManyField('incharges.Incharge')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
     contacts = models.ManyToManyField('contacts.Contact')
+
+    def __unicode__(self):
+        return self.first_name_student

@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Assignment',
             fields=[
-                ('id_assignment', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('assignment_name', models.CharField(max_length=45)),
                 ('enable_assigment', models.BooleanField(default=1)),
             ],

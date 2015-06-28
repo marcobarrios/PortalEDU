@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StaffActivity',
             fields=[
-                ('id_staff_activity', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name_staff_activity', models.CharField(max_length=45)),
                 ('date_time_staff_activity', models.DateTimeField(null=True, blank=True)),
                 ('descripcion_staff_activity', models.CharField(max_length=255, blank=True)),

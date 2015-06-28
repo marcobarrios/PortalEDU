@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StudentReport',
             fields=[
-                ('id_student_report', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('subject_student_report', models.CharField(max_length=45, blank=True)),
                 ('description_student_report', models.TextField(blank=True)),
                 ('date_time_sent_report', models.DateTimeField(null=True, blank=True)),

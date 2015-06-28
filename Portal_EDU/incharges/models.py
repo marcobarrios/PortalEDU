@@ -1,7 +1,6 @@
 from django.db import models
 
 class Incharge(models.Model):
-    id_incharge = models.BigIntegerField(primary_key=True, editable=False)
     first_name_incharge = models.CharField(max_length=45, blank=True)
     last_name_incharge = models.CharField(max_length=45, blank=True)
     birth_date_incharge = models.CharField(max_length=45, blank=True)
@@ -14,4 +13,6 @@ class Incharge(models.Model):
 
     incharge_type = models.ForeignKey('incharge_types.InchargeType')
     genre = models.ForeignKey('genres.Genre')
-    
+
+    def __unicode__(self):
+        return self.first_name_incharge

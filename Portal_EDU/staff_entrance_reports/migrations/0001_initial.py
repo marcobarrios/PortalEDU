@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StaffEntranceReport',
             fields=[
-                ('id_staff_entrance_report', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('date_time_staff_entrance', models.DateTimeField()),
                 ('date_time_staff_exit', models.DateTimeField(null=True, blank=True)),
                 ('enable_staff_entrance_report', models.BooleanField(default=1)),

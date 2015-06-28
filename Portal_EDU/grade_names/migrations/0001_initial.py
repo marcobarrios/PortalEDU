@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='GradeName',
             fields=[
-                ('id_grade_name', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('gradename', models.CharField(max_length=45)),
                 ('enable_grade_name', models.BooleanField(default=1)),
             ],

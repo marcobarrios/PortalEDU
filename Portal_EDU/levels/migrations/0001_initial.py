@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Level',
             fields=[
-                ('id_level', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('level_name', models.CharField(max_length=45)),
                 ('enable_levels', models.BooleanField(default=1)),
             ],

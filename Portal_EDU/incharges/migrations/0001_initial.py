@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Incharge',
             fields=[
-                ('id_incharge', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('first_name_incharge', models.CharField(max_length=45, blank=True)),
                 ('last_name_incharge', models.CharField(max_length=45, blank=True)),
                 ('birth_date_incharge', models.CharField(max_length=45, blank=True)),

@@ -14,9 +14,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Planification',
             fields=[
-                ('id_planification', models.BigIntegerField(serialize=False, primary_key=True)),
-                ('planification_file', models.FileField(upload_to=b'planifitacion_files/%Y/%m/%d/', blank=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('title_planification', models.CharField(max_length=45, blank=True)),
                 ('description_planification', models.TextField(null=True, blank=True)),
+                ('planification_file', models.FileField(upload_to=b'planifitacion_files/%Y/%m/%d/', blank=True)),
                 ('enable_planification', models.BooleanField(default=1)),
                 ('planifitacion_type', models.ForeignKey(to='planification_types.PlanificationType')),
             ],

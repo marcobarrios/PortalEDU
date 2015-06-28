@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='EntranceSchedule',
             fields=[
-                ('id_entrance_schedule', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('entrance_time', models.DateTimeField()),
                 ('leave_time', models.DateTimeField(null=True, blank=True)),
                 ('enable_entrance_schedule', models.BooleanField(default=1)),

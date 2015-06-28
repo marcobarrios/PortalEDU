@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StudentControlList',
             fields=[
-                ('id_student_control_list', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('year', models.PositiveIntegerField(blank=True)),
                 ('gpa', models.DecimalField(max_digits=5, decimal_places=2, blank=True)),
                 ('approved', models.BooleanField(default=0)),

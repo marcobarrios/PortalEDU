@@ -1,7 +1,6 @@
 from django.db import models
 
 class Staff(models.Model):
-    id_staff = models.BigIntegerField(primary_key=True, editable=False) 
     image_staff = models.ImageField(upload_to='staff_images/%Y/%m/%d/', blank=True, null=True)
     code_staff = models.CharField(max_length=45, blank=True) 
     first_name_staff = models.CharField(max_length=45) 
@@ -22,3 +21,6 @@ class Staff(models.Model):
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
     contacts = models.ManyToManyField('contacts.Contact')
     staff_activities = models.ManyToManyField('staff_activities.StaffActivity')
+
+    def __unicode__(self):
+        return self.first_name_staff

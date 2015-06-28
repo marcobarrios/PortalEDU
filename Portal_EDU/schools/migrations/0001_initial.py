@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='School',
             fields=[
-                ('id_school', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name_school', models.CharField(max_length=45)),
                 ('phone_school', models.CharField(max_length=45, blank=True)),
                 ('address_school', models.CharField(max_length=45, blank=True)),

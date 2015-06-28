@@ -1,7 +1,6 @@
 from django.db import models
 
 class InchargeAppointment(models.Model):
-    id_incharge_appointment = models.BigIntegerField(primary_key=True, editable=False)
     subject_incharge_appointment = models.CharField(max_length=45, blank=True)
     description_incharge_appointment = models.TextField(blank=True)
     date_time_incharge_appointment = models.DateTimeField(blank=True, null=True)
@@ -12,3 +11,6 @@ class InchargeAppointment(models.Model):
 
     staff = models.ForeignKey('staffs.Staff')
     student = models.ForeignKey('students.Student')
+
+    def __unicode__(self):
+        return self.subject_incharge_appointment

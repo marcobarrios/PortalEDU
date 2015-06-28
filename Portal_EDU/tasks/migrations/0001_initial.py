@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Task',
             fields=[
-                ('id_task', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('delivered_date_task', models.DateTimeField()),
                 ('checked_task', models.BooleanField(default=0)),
                 ('file_task', models.FileField(upload_to=b'task_files/%Y/%m/%d/', blank=True)),

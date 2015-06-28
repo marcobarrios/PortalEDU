@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Course',
             fields=[
-                ('id_course', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('max_student_capacity_course', models.PositiveIntegerField(null=True, blank=True)),
                 ('quantity_student_course', models.PositiveIntegerField(null=True, blank=True)),
                 ('enable_course', models.BooleanField(default=1)),

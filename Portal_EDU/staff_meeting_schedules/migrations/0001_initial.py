@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StaffMeetingSchedule',
             fields=[
-                ('id_staff_meeting_schedule', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('date_time_init_staff_meeting_schedule', models.DateTimeField()),
                 ('date_time_end_staff_meeting_schedule', models.DateTimeField()),
                 ('enable_staff_meeting_schedule', models.BooleanField(default=1)),

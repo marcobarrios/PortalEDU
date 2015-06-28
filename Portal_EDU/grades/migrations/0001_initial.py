@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Grade',
             fields=[
-                ('id_grade', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('enable_grade', models.BooleanField(default=1)),
                 ('extra_curricular_activities', models.ManyToManyField(to='extra_curricular_activities.ExtraCurricularActivity')),
                 ('grade_name', models.ForeignKey(to='grade_names.GradeName')),

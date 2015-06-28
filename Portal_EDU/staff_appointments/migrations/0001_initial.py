@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='StaffAppointment',
             fields=[
-                ('id_staff_appointment', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('subject_staff_appointment', models.CharField(max_length=45, blank=True)),
                 ('description_staff_appointment', models.CharField(max_length=45, blank=True)),
                 ('date_time_staff_appointment', models.DateTimeField(null=True, blank=True)),

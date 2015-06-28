@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='MedicalBackGround',
             fields=[
-                ('id_medical_background', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('title_medical_background', models.CharField(max_length=45, blank=True)),
                 ('description_medical_background', models.TextField()),
                 ('enable_medical_background', models.BooleanField(default=1)),

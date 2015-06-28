@@ -6,4 +6,4 @@ class Planification(models.Model):
     description_planification = models.TextField(blank=True, null=True)
     enable_planification = models.BooleanField(default=1)
 
-    planifitacion_type = models.ForeignKey('planifitacion_types.PlanificationType')
+    planifitacion_type = models.ForeignKey('planification_types.PlanificationType')

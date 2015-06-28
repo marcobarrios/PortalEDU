@@ -11,8 +11,8 @@ class Student(models.Model):
     home_address_student = models.TextField(blank=True, null=True)
     enable_student = models.BooleanField(default=1)
 
-    genre = models.ForeginKey('genres.Genre')
-    blood_type = models.ForeginKey('blood_types.BloodType')
+    genre = models.ForeignKey('genres.Genre')
+    blood_type = models.ForeignKey('blood_types.BloodType')
     incharges = models.ManyToManyField('incharges.Incharge')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
     contacts = models.ManyToManyField('contacts.Contact')

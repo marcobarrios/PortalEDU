@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('assignments', '0001_initial'),
+        ('courses', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='AcademicCalendar',
+            fields=[
+                ('id_academic_calendar', models.BigIntegerField(serialize=False, primary_key=True)),
+                ('title', models.CharField(max_length=45, blank=True)),
+                ('description', models.TextField(blank=True)),
+                ('ponderation', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
+                ('grade', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
+                ('delivery_date', models.DateTimeField(null=True, blank=True)),
+                ('need_file', models.BooleanField(default=0)),
+                ('enable_academic_calendar', models.BooleanField(default=1)),
+                ('assignment', models.ForeignKey(to='assignments.Assignment')),
+                ('course', models.ForeignKey(to='courses.Course')),
+            ],
+            options={
+            },
+            bases=(models.Model,),
+        ),
+    ]

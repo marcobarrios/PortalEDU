@@ -1,7 +1,7 @@
 from django.db import models
 
 class ExtraCurricularActivity(models.Model):
-    id_extra_curricular_activity = models.BigIntegerField(primary_key=True)
+    id_extra_curricular_activity = models.BigIntegerField(primary_key=True, editable=False)
     name_activity = models.CharField(max_length=45)
     date_time_activity = models.CharField(max_length=45)
     duration_extra_curricular_activity = models.PositiveIntegerField(blank=True, null=True)

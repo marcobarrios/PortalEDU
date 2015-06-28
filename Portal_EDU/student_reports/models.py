@@ -1,7 +1,7 @@
 from django.db import models
 
 class StudentReport(models.Model):
-    id_student_report = models.BigIntegerField(primary_key=True)
+    id_student_report = models.BigIntegerField(primary_key=True, editable=False)
     subject_student_report = models.CharField(max_length=45, blank=True)
     description_student_report = models.TextField(blank=True) 
     date_time_sent_report = models.DateTimeField(blank=True, null=True)

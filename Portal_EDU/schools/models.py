@@ -1,7 +1,7 @@
 from django.db import models
 
 class School(models.Model):
-    id_school = models.BigIntegerField(primary_key=True)
+    id_school = models.BigIntegerField(primary_key=True, editable=False)
     name_school = models.CharField(max_length=45)
     phone_school = models.CharField(max_length=45, blank=True)
     address_school = models.CharField(max_length=45, blank=True)

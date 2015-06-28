@@ -1,7 +1,7 @@
 from django.db import models
 
 class StaffAppointment(models.Model):
-    id_staff_appointment = models.BigIntegerField(primary_key=True)
+    id_staff_appointment = models.BigIntegerField(primary_key=True, editable=False)
     subject_staff_appointment = models.CharField(max_length=45, blank=True)
     description_staff_appointment = models.CharField(max_length=45, blank=True) 
     date_time_staff_appointment = models.DateTimeField(blank=True, null=True)

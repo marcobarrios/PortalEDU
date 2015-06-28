@@ -1,7 +1,7 @@
 from django.db import models
 
 class Staff(models.Model):
-    id_staff = models.BigIntegerField(primary_key=True) 
+    id_staff = models.BigIntegerField(primary_key=True, editable=False) 
     image_staff = models.ImageField(upload_to='staff_images/%Y/%m/%d/', blank=True, null=True)
     code_staff = models.CharField(max_length=45, blank=True) 
     first_name_staff = models.CharField(max_length=45) 

@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'levels',
     'medical_backgrounds',
     'modules',
+    'notes',
     'planification_types',
     'planifications',
     'schedules',

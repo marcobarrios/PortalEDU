@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import StaffMeetingSchedule
+
+admin.site.register(StaffMeetingSchedule)

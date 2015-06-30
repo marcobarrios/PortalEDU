@@ -7,7 +7,6 @@ class Course(models.Model):
 
 	grade = models.ForeignKey('grades.Grade')
 	subject = models.ForeignKey('subjects.Subject')
-	schedule = models.ForeignKey('schedules.Schedule')
-	planification = models.ForeignKey('planifications.Planification')
+	schedule = models.ForeignKey('schedules.Schedule', blank=True, null=True)
 	module = models.ForeignKey('modules.Module')
-	classroom = models.ForeignKey('classrooms.ClassRoom')
+	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)

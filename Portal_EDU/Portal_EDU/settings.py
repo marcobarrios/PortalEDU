@@ -96,9 +96,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'apoloDB' ,
-        'USER': 'root' ,
-        'PASSWORD': '',
-        'HOST': '',
+        'USER': 'apolodb' ,
+        'PASSWORD': 'apoloedu',
+        'HOST': 'apolo.c3ram9u98htv.us-west-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 

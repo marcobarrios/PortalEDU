@@ -11,5 +11,5 @@ class AcademicCalendar(models.Model):
     assignment = models.ForeignKey('assignments.Assignment')
     course = models.ForeignKey('courses.Course')
 
-    def __unicode(self):
+    def __unicode__(self):
         return self.title

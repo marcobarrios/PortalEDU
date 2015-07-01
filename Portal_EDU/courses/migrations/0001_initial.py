@@ -7,12 +7,11 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('subjects', '0001_initial'),
-        ('schedules', '0001_initial'),
         ('classrooms', '0001_initial'),
-        ('modules', '0001_initial'),
-        ('planifications', '0001_initial'),
         ('grades', '0001_initial'),
+        ('modules', '0001_initial'),
+        ('schedules', '0001_initial'),
+        ('subjects', '0001_initial'),
     ]
 
     operations = [
@@ -23,11 +22,10 @@ class Migration(migrations.Migration):
                 ('max_student_capacity_course', models.PositiveIntegerField(null=True, blank=True)),
                 ('quantity_student_course', models.PositiveIntegerField(null=True, blank=True)),
                 ('enable_course', models.BooleanField(default=1)),
-                ('classroom', models.ForeignKey(to='classrooms.ClassRoom')),
+                ('classroom', models.ForeignKey(blank=True, to='classrooms.ClassRoom', null=True)),
                 ('grade', models.ForeignKey(to='grades.Grade')),
                 ('module', models.ForeignKey(to='modules.Module')),
-                ('planification', models.ForeignKey(to='planifications.Planification')),
-                ('schedule', models.ForeignKey(to='schedules.Schedule')),
+                ('schedule', models.ForeignKey(blank=True, to='schedules.Schedule', null=True)),
                 ('subject', models.ForeignKey(to='subjects.Subject')),
             ],
             options={

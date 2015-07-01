@@ -8,6 +8,7 @@ class Staff(models.Model):
     birth_date_staff = models.CharField(max_length=45, blank=True)
     email_staff = models.EmailField(max_length=254, blank=True)
     home_address_staff = models.TextField(blank=True, null=True)
+    neighborhood_staff = models.TextField(blank=True, null=True)
     identification_document_staff = models.CharField(max_length=20, blank=True)
     nit_staff = models.CharField(max_length=15, blank=True)
     igss_afiliation_number_staff = models.CharField(max_length=25, blank=True)
@@ -18,9 +19,8 @@ class Staff(models.Model):
 
     genre = models.ForeignKey('genres.Genre')
     blood_type = models.ForeignKey('blood_types.BloodType')
-    medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
-    contacts = models.ManyToManyField('contacts.Contact')
-    staff_activities = models.ManyToManyField('staff_activities.StaffActivity')
+    medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
+    contacts = models.ManyToManyField('contacts.Contact', blank=True, null=True)
 
     def __unicode__(self):
-        return self.first_name_staff
+        return self.last_name_staff + ", " + self.first_name_staff

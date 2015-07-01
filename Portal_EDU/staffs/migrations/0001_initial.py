@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
         ('genres', '0001_initial'),
         ('medical_backgrounds', '0001_initial'),
         ('blood_types', '0001_initial'),
-        ('staff_activities', '0001_initial'),
         ('contacts', '0001_initial'),
     ]
 
@@ -26,6 +25,7 @@ class Migration(migrations.Migration):
                 ('birth_date_staff', models.CharField(max_length=45, blank=True)),
                 ('email_staff', models.EmailField(max_length=254, blank=True)),
                 ('home_address_staff', models.TextField(null=True, blank=True)),
+                ('neighborhood_staff', models.TextField(null=True, blank=True)),
                 ('identification_document_staff', models.CharField(max_length=20, blank=True)),
                 ('nit_staff', models.CharField(max_length=15, blank=True)),
                 ('igss_afiliation_number_staff', models.CharField(max_length=25, blank=True)),
@@ -34,10 +34,9 @@ class Migration(migrations.Migration):
                 ('cv_file_staff', models.FileField(upload_to=b'staff_cv_files/%Y/%m/%d/', blank=True)),
                 ('enable_staff', models.BooleanField(default=1)),
                 ('blood_type', models.ForeignKey(to='blood_types.BloodType')),
-                ('contacts', models.ManyToManyField(to='contacts.Contact')),
+                ('contacts', models.ManyToManyField(to='contacts.Contact', null=True, blank=True)),
                 ('genre', models.ForeignKey(to='genres.Genre')),
-                ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround')),
-                ('staff_activities', models.ManyToManyField(to='staff_activities.StaffActivity')),
+                ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround', null=True, blank=True)),
             ],
             options={
             },

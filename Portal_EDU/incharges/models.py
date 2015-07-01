@@ -15,4 +15,4 @@ class Incharge(models.Model):
     genre = models.ForeignKey('genres.Genre')
 
     def __unicode__(self):
-        return self.first_name_incharge
+        return self.last_name_incharge + ", " + self.first_name_incharge

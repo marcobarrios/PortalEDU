@@ -10,7 +10,8 @@ class ExtraCurricularActivity(models.Model):
     done_activity = models.BooleanField(default=0)
     enable_extra_curricular_activity = models.BooleanField(default=1)
 
-    staff = models.ForeignKey('staffs.Staff')
+    staff = models.ForeignKey('staffs.Staff', blank=True, null=True)
+    grade = models.ManyToManyField('grades.Grade')
     extra_curricular_activity_type = models.ForeignKey('extra_curricular_activity_types.ExtraCurricularActivityType')
 
     def __unicode__(self):

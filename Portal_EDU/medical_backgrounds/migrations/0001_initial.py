@@ -14,8 +14,9 @@ class Migration(migrations.Migration):
             name='MedicalBackGround',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('title_medical_background', models.CharField(max_length=45, blank=True)),
-                ('description_medical_background', models.TextField()),
+                ('title_medical_background', models.CharField(max_length=45)),
+                ('description_medical_background', models.TextField(null=True, blank=True)),
+                ('treatment_medical_background', models.TextField(null=True, blank=True)),
                 ('enable_medical_background', models.BooleanField(default=1)),
             ],
             options={

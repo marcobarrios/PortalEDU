@@ -19,7 +19,6 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=45, blank=True)),
                 ('description', models.TextField(blank=True)),
                 ('ponderation', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
-                ('grade', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
                 ('delivery_date', models.DateTimeField(null=True, blank=True)),
                 ('need_file', models.BooleanField(default=0)),
                 ('enable_academic_calendar', models.BooleanField(default=1)),

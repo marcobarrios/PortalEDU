@@ -7,6 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('grades', '0001_initial'),
         ('staffs', '0001_initial'),
         ('extra_curricular_activity_types', '0001_initial'),
     ]
@@ -25,7 +26,8 @@ class Migration(migrations.Migration):
                 ('done_activity', models.BooleanField(default=0)),
                 ('enable_extra_curricular_activity', models.BooleanField(default=1)),
                 ('extra_curricular_activity_type', models.ForeignKey(to='extra_curricular_activity_types.ExtraCurricularActivityType')),
-                ('staff', models.ForeignKey(to='staffs.Staff')),
+                ('grade', models.ManyToManyField(to='grades.Grade')),
+                ('staff', models.ForeignKey(blank=True, to='staffs.Staff', null=True)),
             ],
             options={
             },

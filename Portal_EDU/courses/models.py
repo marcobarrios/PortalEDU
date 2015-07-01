@@ -8,6 +8,8 @@ class Course(models.Model):
 	grade = models.ForeignKey('grades.Grade')
 	subject = models.ForeignKey('subjects.Subject')
 	module = models.ForeignKey('modules.Module')
-	planifications = models.ManyToManyField('planifications.Planification', blank=True, null=True)
 	schedule = models.ForeignKey('schedules.Schedule', blank=True, null=True)
 	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)
+
+	def __unicode__(self):
+		return self.grade + " " + self.subject + " " + self.module

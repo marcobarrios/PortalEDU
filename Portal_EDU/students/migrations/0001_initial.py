@@ -8,10 +8,11 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('genres', '0001_initial'),
+        ('blood_types', '0001_initial'),
         ('medical_backgrounds', '0001_initial'),
         ('incharges', '0001_initial'),
         ('contacts', '0001_initial'),
-        ('blood_types', '0001_initial'),
+        ('grades', '0001_initial'),
     ]
 
     operations = [
@@ -26,12 +27,14 @@ class Migration(migrations.Migration):
                 ('birth_date_student', models.DateField()),
                 ('email_student', models.EmailField(max_length=254, blank=True)),
                 ('home_address_student', models.TextField(null=True, blank=True)),
+                ('neighborhood_student', models.TextField(null=True, blank=True)),
                 ('enable_student', models.BooleanField(default=1)),
                 ('blood_type', models.ForeignKey(to='blood_types.BloodType')),
                 ('contacts', models.ManyToManyField(to='contacts.Contact')),
                 ('genre', models.ForeignKey(to='genres.Genre')),
+                ('grade', models.ForeignKey(blank=True, to='grades.Grade', null=True)),
                 ('incharges', models.ManyToManyField(to='incharges.Incharge')),
-                ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround')),
+                ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround', null=True, blank=True)),
             ],
             options={
             },

@@ -8,3 +8,6 @@ class StudentControlList(models.Model):
 
 	student = models.ForeignKey('students.Student')
 	grade = models.ForeignKey('grades.Grade')
+
+	def __unicode__(self):
+		return self.year + " " + self.student + " " + self.grade + " " + self.gpa

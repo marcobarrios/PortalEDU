@@ -8,13 +8,15 @@ class Student(models.Model):
     birth_date_student = models.DateField() 
     email_student = models.EmailField(max_length=254, blank=True)
     home_address_student = models.TextField(blank=True, null=True)
+    neighborhood_student = models.TextField(blank=True, null=True)
     enable_student = models.BooleanField(default=1)
 
     genre = models.ForeignKey('genres.Genre')
     blood_type = models.ForeignKey('blood_types.BloodType')
     incharges = models.ManyToManyField('incharges.Incharge')
-    medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground')
+    medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
     contacts = models.ManyToManyField('contacts.Contact')
+    grade = models.ForeignKey('grades.Grade', blank=True, null=True)
 
     def __unicode__(self):
-        return self.first_name_student
+        return self.last_name_student + ", " + self.first_name_student

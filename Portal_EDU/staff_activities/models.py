@@ -7,5 +7,7 @@ class StaffActivity(models.Model):
     done_staff_activity = models.IntegerField(blank=True, null=True)
     enable_staff_activity = models.BooleanField(default=1)
 
+    staff = models.ManyToManyField('staffs.Staff')
+
     def __unicode__(self):
     	return self.name_staff_activity

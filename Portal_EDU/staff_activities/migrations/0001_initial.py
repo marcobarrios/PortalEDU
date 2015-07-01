@@ -7,6 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('staffs', '0001_initial'),
     ]
 
     operations = [
@@ -19,6 +20,7 @@ class Migration(migrations.Migration):
                 ('descripcion_staff_activity', models.CharField(max_length=255, blank=True)),
                 ('done_staff_activity', models.IntegerField(null=True, blank=True)),
                 ('enable_staff_activity', models.BooleanField(default=1)),
+                ('staff', models.ManyToManyField(to='staffs.Staff')),
             ],
             options={
             },

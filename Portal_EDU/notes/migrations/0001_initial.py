@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('academic_calendars', '0002_remove_academiccalendar_grade'),
+        ('academic_calendars', '0001_initial'),
         ('students', '0001_initial'),
     ]
 

@@ -7,4 +7,5 @@ class Task(models.Model):
     teacher_commentary_task = models.TextField(blank=True) 
     enable_task = models.BooleanField(default=1) 
 
+    student = models.ForeignKey('students.Student')
     academic_calendar = models.ForeignKey('academic_calendars.AcademicCalendar')

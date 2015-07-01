@@ -7,6 +7,7 @@ class Course(models.Model):
 
 	grade = models.ForeignKey('grades.Grade')
 	subject = models.ForeignKey('subjects.Subject')
-	schedule = models.ForeignKey('schedules.Schedule', blank=True, null=True)
 	module = models.ForeignKey('modules.Module')
+	planifications = models.ManyToManyField('planifications.Planification', blank=True, null=True)
+	schedule = models.ForeignKey('schedules.Schedule', blank=True, null=True)
 	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)

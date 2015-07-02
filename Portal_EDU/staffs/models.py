@@ -17,6 +17,7 @@ class Staff(models.Model):
     cv_file_staff = models.FileField(upload_to='staff_cv_files/%Y/%m/%d/', blank=True)
     enable_staff = models.BooleanField(default=1)
 
+    staff_type = models.ForeignKey('staff_types.StaffType')
     genre = models.ForeignKey('genres.Genre')
     blood_type = models.ForeignKey('blood_types.BloodType')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)

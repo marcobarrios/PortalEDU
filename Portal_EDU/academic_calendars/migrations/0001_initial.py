@@ -16,11 +16,11 @@ class Migration(migrations.Migration):
             name='AcademicCalendar',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('title', models.CharField(max_length=45, blank=True)),
+                ('title', models.CharField(max_length=45)),
                 ('description', models.TextField(blank=True)),
                 ('ponderation', models.DecimalField(default=0.0, max_digits=4, decimal_places=2)),
                 ('delivery_date', models.DateTimeField(null=True, blank=True)),
-                ('need_file', models.BooleanField(default=0)),
+                ('need_file', models.BooleanField(default=False)),
                 ('enable_academic_calendar', models.BooleanField(default=1)),
                 ('assignment', models.ForeignKey(to='assignments.Assignment')),
                 ('course', models.ForeignKey(to='courses.Course')),

@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('genres', '0001_initial'),
+        ('staff_types', '0001_initial'),
         ('medical_backgrounds', '0001_initial'),
         ('blood_types', '0001_initial'),
         ('contacts', '0001_initial'),
@@ -22,7 +23,7 @@ class Migration(migrations.Migration):
                 ('code_staff', models.CharField(max_length=45, blank=True)),
                 ('first_name_staff', models.CharField(max_length=45)),
                 ('last_name_staff', models.CharField(max_length=45)),
-                ('birth_date_staff', models.CharField(max_length=45, blank=True)),
+                ('birth_date_staff', models.DateField(blank=True)),
                 ('email_staff', models.EmailField(max_length=254, blank=True)),
                 ('home_address_staff', models.TextField(null=True, blank=True)),
                 ('neighborhood_staff', models.TextField(null=True, blank=True)),
@@ -37,6 +38,7 @@ class Migration(migrations.Migration):
                 ('contacts', models.ManyToManyField(to='contacts.Contact', null=True, blank=True)),
                 ('genre', models.ForeignKey(to='genres.Genre')),
                 ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround', null=True, blank=True)),
+                ('staff_type', models.ForeignKey(to='staff_types.StaffType')),
             ],
             options={
             },

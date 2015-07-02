@@ -16,9 +16,9 @@ class Migration(migrations.Migration):
             name='Incharge',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('first_name_incharge', models.CharField(max_length=45, blank=True)),
-                ('last_name_incharge', models.CharField(max_length=45, blank=True)),
-                ('birth_date_incharge', models.CharField(max_length=45, blank=True)),
+                ('first_name_incharge', models.CharField(max_length=45)),
+                ('last_name_incharge', models.CharField(max_length=45)),
+                ('birth_date_incharge', models.DateField(max_length=45, blank=True)),
                 ('email_incharge', models.EmailField(max_length=254, blank=True)),
                 ('home_address_incharge', models.TextField(null=True, blank=True)),
                 ('identification_document_incharge', models.CharField(max_length=20, blank=True)),

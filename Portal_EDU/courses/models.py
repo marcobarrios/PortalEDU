@@ -8,7 +8,7 @@ class Course(models.Model):
 	grade = models.ForeignKey('grades.Grade')
 	subject = models.ForeignKey('subjects.Subject')
 	module = models.ForeignKey('modules.Module')
-	schedule = models.ForeignKey('schedules.Schedule', blank=True, null=True)
+	schedule = models.ManyToManyField('schedules.Schedule', blank=True, null=True)
 	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)
 
 	def __unicode__(self):

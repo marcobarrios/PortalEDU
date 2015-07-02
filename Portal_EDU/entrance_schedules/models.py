@@ -1,8 +1,22 @@
+# -*- encoding: utf-8 -*-
 from django.db import models
 
 class EntranceSchedule(models.Model):
-    entrance_time = models.DateTimeField()
-    leave_time = models.DateTimeField(blank=True, null=True)
-    enable_entrance_schedule = models.BooleanField(default=1)
+	week_days = (
+		('Lunes', 'Lunes'),
+		('Martes', 'Martes'),
+		('Miércoles', 'Miércoles'),
+		('Jueves', 'Jueves'),
+		('Viernes', 'Viernes'),
+		('Sábado', 'Sábado'),
+		('Domingo', 'Domingo'),
+	)
+	day = models.CharField(max_length=15, choices=week_days, default='Lunes')
+	entrance_time = models.TimeField()
+	leave_time = models.TimeField(blank=True, null=True)
+	enable_entrance_schedule = models.BooleanField(default=1)
 
-    staff = models.ForeignKey('staffs.Staff')
+	staff = models.ForeignKey('staffs.Staff')
+
+	def __unicode__(self):
+		return str(self.day) + " " + str(self.entrance_time) + " - " + str(self.leave_time)

@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('classroom', models.ForeignKey(blank=True, to='classrooms.ClassRoom', null=True)),
                 ('grade', models.ForeignKey(to='grades.Grade')),
                 ('module', models.ForeignKey(to='modules.Module')),
-                ('schedule', models.ForeignKey(blank=True, to='schedules.Schedule', null=True)),
+                ('schedule', models.ManyToManyField(to='schedules.Schedule', null=True, blank=True)),
                 ('subject', models.ForeignKey(to='subjects.Subject')),
             ],
             options={

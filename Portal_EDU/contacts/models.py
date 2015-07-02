@@ -6,5 +6,5 @@ class Contact(models.Model):
 
     contact_type = models.ForeignKey('contact_types.ContactType')
 
-    def __unicode__(self):
+    def __str__(self):
     	return self.phone_contact

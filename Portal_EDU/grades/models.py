@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from django.db import models
 
 class Grade(models.Model):
@@ -10,5 +11,5 @@ class Grade(models.Model):
 	staff = models.ForeignKey('staffs.Staff', blank=True, null=True)
 	level = models.ForeignKey('levels.Level')
 
-	def __unicode__(self):
-		self.grade_name + " " + self.level + " " + self.section
+	def __str__(self):
+		return str(self.grade_name) + " " + str(self.level) + " " + str(self.section)

@@ -18,5 +18,5 @@ class Student(models.Model):
     contacts = models.ManyToManyField('contacts.Contact')
     grade = models.ForeignKey('grades.Grade', blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.last_name_student + ", " + self.first_name_student

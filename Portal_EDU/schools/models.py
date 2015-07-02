@@ -9,5 +9,5 @@ class School(models.Model):
     mission_school = models.TextField(blank=True, null=True)
     enable_school = models.BooleanField(default=1)
 
-    def __unicode__(self):
+    def __str__(self):
     	return self.name_school

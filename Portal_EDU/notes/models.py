@@ -7,5 +7,5 @@ class Note(models.Model):
 	academic_calendar = models.ForeignKey('academic_calendars.AcademicCalendar')
 	student = models.ForeignKey('students.Student')
 
-	def __unicode__(self):
+	def __str__(self):
 		return self.note

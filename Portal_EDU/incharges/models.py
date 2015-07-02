@@ -1,9 +1,9 @@
 from django.db import models
 
 class Incharge(models.Model):
-    first_name_incharge = models.CharField(max_length=45, blank=True)
-    last_name_incharge = models.CharField(max_length=45, blank=True)
-    birth_date_incharge = models.CharField(max_length=45, blank=True)
+    first_name_incharge = models.CharField(max_length=45)
+    last_name_incharge = models.CharField(max_length=45)
+    birth_date_incharge = models.DateField(max_length=45, blank=True)
     email_incharge = models.EmailField(max_length=254, blank=True)
     home_address_incharge = models.TextField(blank=True, null=True)
     identification_document_incharge = models.CharField(max_length=20, blank=True)
@@ -14,5 +14,5 @@ class Incharge(models.Model):
     incharge_type = models.ForeignKey('incharge_types.InchargeType')
     genre = models.ForeignKey('genres.Genre')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.last_name_incharge + ", " + self.first_name_incharge

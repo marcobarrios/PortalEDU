@@ -9,5 +9,5 @@ class Planification(models.Model):
     course = models.ForeignKey('courses.Course')
     planifitacion_type = models.ForeignKey('planification_types.PlanificationType')
 
-    def __unicode__(self):
+    def __str__(self):
     	return self.title_planification

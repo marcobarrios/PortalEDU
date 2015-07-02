@@ -18,5 +18,5 @@ class EntranceSchedule(models.Model):
 
 	staff = models.ForeignKey('staffs.Staff')
 
-	def __unicode__(self):
+	def __str__(self):
 		return str(self.day) + " " + str(self.entrance_time) + " - " + str(self.leave_time)

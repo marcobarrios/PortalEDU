@@ -22,5 +22,5 @@ class Staff(models.Model):
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
     contacts = models.ManyToManyField('contacts.Contact', blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.last_name_staff + ", " + self.first_name_staff

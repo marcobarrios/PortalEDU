@@ -6,5 +6,5 @@ class MedicalBackGround(models.Model):
     treatment_medical_background = models.TextField(blank=True, null=True)
     enable_medical_background = models.BooleanField(default=1)
 
-    def __unicode__(self):
+    def __str__(self):
     	return self.title_medical_background

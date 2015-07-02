@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 from django.db import models
 
 class Course(models.Model):
@@ -11,5 +12,5 @@ class Course(models.Model):
 	schedule = models.ManyToManyField('schedules.Schedule', blank=True, null=True)
 	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)
 
-	def __unicode__(self):
-		return self.grade + " " + self.subject + " " + self.module
+	def __str__(self):
+		return str(self.grade) + " " + str(self.subject) + " " + str(self.module)

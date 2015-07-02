@@ -16,5 +16,5 @@ class Schedule(models.Model):
 	end_time = models.TimeField()
 	enable_schedule = models.BooleanField(default=1)
 
-	def __unicode__(self):
+	def __str__(self):
 		return str(self.day) + " " + str(self.init_time) + " - " + str(self.end_time)

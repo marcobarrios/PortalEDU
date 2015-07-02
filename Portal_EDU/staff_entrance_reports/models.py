@@ -6,3 +6,6 @@ class StaffEntranceReport(models.Model):
     enable_staff_entrance_report = models.BooleanField(default=1)
 
     staff = models.ForeignKey('staffs.Staff')
+
+    def __str__(self):
+    	return str(self.date_time_staff_entrance) + " - " + str(self.date_time_staff_exit)

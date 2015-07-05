@@ -7,7 +7,6 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('staffs', '0001_initial'),
     ]
 
     operations = [
@@ -19,7 +18,6 @@ class Migration(migrations.Migration):
                 ('entrance_time', models.TimeField()),
                 ('leave_time', models.TimeField(null=True, blank=True)),
                 ('enable_entrance_schedule', models.BooleanField(default=1)),
-                ('staff', models.ForeignKey(to='staffs.Staff')),
             ],
             options={
             },

@@ -64,6 +64,7 @@ INSTALLED_APPS = (
     'staff_activities',
     'staff_appointments',
     'staff_entrance_reports',
+    'staff_entrance_schedules',
     'staff_meeting_schedules',
     'staff_types',
     'staffs',

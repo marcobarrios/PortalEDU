@@ -7,11 +7,12 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('classrooms', '0001_initial'),
-        ('grades', '0001_initial'),
-        ('modules', '0001_initial'),
-        ('schedules', '0001_initial'),
         ('subjects', '0001_initial'),
+        ('schedules', '0001_initial'),
+        ('classrooms', '0001_initial'),
+        ('modules', '0001_initial'),
+        ('grades', '0001_initial'),
+        ('staffs', '0001_initial'),
     ]
 
     operations = [
@@ -26,6 +27,7 @@ class Migration(migrations.Migration):
                 ('grade', models.ForeignKey(to='grades.Grade')),
                 ('module', models.ForeignKey(to='modules.Module')),
                 ('schedule', models.ManyToManyField(to='schedules.Schedule', null=True, blank=True)),
+                ('staff', models.ForeignKey(blank=True, to='staffs.Staff', null=True)),
                 ('subject', models.ForeignKey(to='subjects.Subject')),
             ],
             options={

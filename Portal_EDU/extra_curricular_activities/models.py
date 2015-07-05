@@ -3,7 +3,8 @@ from django.db import models
 
 class ExtraCurricularActivity(models.Model):
     name_activity = models.CharField(max_length=45)
-    date_time_activity = models.DateTimeField(max_length=45)
+    date_activity = models.DateField()
+    time_activity = models.TimeField()
     duration_extra_curricular_activity = models.PositiveIntegerField(blank=True, null=True, help_text="En minutos")
     description_activity = models.TextField(blank=True)
     include_parents = models.BooleanField(default=False)

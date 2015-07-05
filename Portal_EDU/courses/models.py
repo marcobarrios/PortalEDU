@@ -10,6 +10,7 @@ class Course(models.Model):
 	subject = models.ForeignKey('subjects.Subject')
 	module = models.ForeignKey('modules.Module')
 	schedule = models.ManyToManyField('schedules.Schedule', blank=True, null=True)
+	staff = models.ForeignKey('staffs.Staff', blank=True, null=True)
 	classroom = models.ForeignKey('classrooms.ClassRoom', blank=True, null=True)
 
 	def __str__(self):

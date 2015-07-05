@@ -16,7 +16,5 @@ class EntranceSchedule(models.Model):
 	leave_time = models.TimeField(blank=True, null=True)
 	enable_entrance_schedule = models.BooleanField(default=1)
 
-	staff = models.ForeignKey('staffs.Staff')
-
 	def __str__(self):
 		return str(self.day) + " " + str(self.entrance_time) + " - " + str(self.leave_time)

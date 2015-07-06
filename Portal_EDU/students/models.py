@@ -6,7 +6,7 @@ class Student(models.Model):
     code_student = models.CharField(max_length=45, blank=True) 
     first_name_student = models.CharField(max_length=45) 
     last_name_student = models.CharField(max_length=45) 
-    birth_date_student = models.DateField() 
+    birth_date_student = models.DateField(max_length=15) 
     email_student = models.EmailField(max_length=254, blank=True)
     home_address_student = models.CharField(max_length=80, blank=True, null=True)
     neighborhood_student = models.CharField(max_length=50, blank=True, null=True)

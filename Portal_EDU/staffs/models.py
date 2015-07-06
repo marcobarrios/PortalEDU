@@ -6,7 +6,7 @@ class Staff(models.Model):
     code_staff = models.CharField(max_length=45, blank=True) 
     first_name_staff = models.CharField(max_length=45) 
     last_name_staff = models.CharField(max_length=45) 
-    birth_date_staff = models.DateField(blank=True)
+    birth_date_staff = models.DateField(max_length=15 ,blank=True)
     email_staff = models.EmailField(max_length=254, blank=True)
     home_address_staff = models.CharField(max_length=80, blank=True, null=True)
     neighborhood_staff = models.CharField(max_length=50, blank=True, null=True)

@@ -19,7 +19,7 @@ class Student(models.Model):
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
     contacts = models.ManyToManyField('contacts.Contact')
     grade = models.ForeignKey('grades.Grade', blank=True, null=True)
-    authentication = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
+    authentication_student = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __str__(self):
         return self.last_name_student + ", " + self.first_name_student

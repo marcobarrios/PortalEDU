@@ -16,7 +16,7 @@ class Incharge(models.Model):
 
     incharge_type = models.ForeignKey('incharge_types.InchargeType')
     genre = models.ForeignKey('genres.Genre')
-    authentication = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
+    authentication_incharge = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __str__(self):
         return self.last_name_incharge + ", " + self.first_name_incharge

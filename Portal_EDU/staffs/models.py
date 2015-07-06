@@ -24,7 +24,7 @@ class Staff(models.Model):
     blood_type = models.ForeignKey('blood_types.BloodType')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
     contacts = models.ManyToManyField('contacts.Contact', blank=True, null=True)
-    authentication = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
+    authentication_staff = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __str__(self):
         return self.last_name_staff + ", " + self.first_name_staff

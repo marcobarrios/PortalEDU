@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
+from django.conf import settings
 
 class Incharge(models.Model):
     first_name_incharge = models.CharField(max_length=45)
@@ -15,6 +16,7 @@ class Incharge(models.Model):
 
     incharge_type = models.ForeignKey('incharge_types.InchargeType')
     genre = models.ForeignKey('genres.Genre')
+    authentication = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __str__(self):
         return self.last_name_incharge + ", " + self.first_name_incharge

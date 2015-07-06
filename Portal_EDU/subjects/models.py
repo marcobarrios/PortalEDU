@@ -7,5 +7,5 @@ class Subject(models.Model):
     max_note_subject = models.DecimalField(default=100.00, max_digits=5, decimal_places=2)
     enable_subject = models.BooleanField(default=1)
 
-    def __str__(self):
+    def __unicode__(self):
     	return self.name_subject

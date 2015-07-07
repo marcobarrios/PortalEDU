@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^', include('classrooms.urls')),
     url(r'^', include('contact_types.urls')),
     url(r'^', include('contacts.urls')),
+    url(r'^', include('courses.urls')),
     url(r'^', include('schools.urls')),
 
 

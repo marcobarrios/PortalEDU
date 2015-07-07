@@ -96,10 +96,11 @@ WSGI_APPLICATION = 'Portal_EDU.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'apoloDB' ,
-        'USER': 'root' ,
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'apolodb' ,
+        'USER': 'adminDuM2sPH' ,
+        'PASSWORD': 'q_cAnvJHLXB7',
+        'HOST': '127.0.0.1',
+        'PORT': '3307'
     }
 }
 

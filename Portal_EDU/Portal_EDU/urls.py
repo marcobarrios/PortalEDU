@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     #url(r'^crear/', 'schools.views.crear', name='crear'),
     url(r'^', include('academic_calendars.urls')),
     url(r'^', include('assignments.urls')),
+    url(r'^', include('authentication.urls')),    
     url(r'^', include('blood_types.urls')),
     url(r'^', include('classrooms.urls')),
     url(r'^', include('contact_types.urls')),
@@ -24,5 +25,5 @@ urlpatterns = patterns('',
     url(r'^', include('incharge_appointments.urls')),
     url(r'^', include('schools.urls')),
     url(r'^', include('tasks.urls')),    
-
+    
 )

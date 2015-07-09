@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'academic_calendars',
     'assignments',
+    'authentication',
     'blood_types',
     'classrooms',
     'contact_types',
@@ -122,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = 'apolodb_login'
+LOGOUT_URL = 'apolodb_logout'
+
+

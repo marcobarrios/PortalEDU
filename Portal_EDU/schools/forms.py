@@ -5,3 +5,4 @@ class SchoolForm(forms.ModelForm):
 
 	class Meta:
 		model = School
+		exclude = ('enable_school',)

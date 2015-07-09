@@ -20,7 +20,9 @@ urlpatterns = patterns('',
     url(r'^', include('extra_curricular_activity_types.urls')),
     url(r'^', include('genres.urls')),
     url(r'^', include('grade_names.urls')),
+    url(r'^', include('grades.urls')),
+    url(r'^', include('incharge_appointments.urls')),
     url(r'^', include('schools.urls')),
-
+    url(r'^', include('tasks.urls')),    
 
 )

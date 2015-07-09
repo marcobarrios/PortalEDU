@@ -22,5 +22,7 @@ urlpatterns = patterns('',
     url(r'^', include('grade_names.urls')),
     url(r'^', include('schools.urls')),
 
+    url(r'^', include('authentication.urls')),    
+
 
 )

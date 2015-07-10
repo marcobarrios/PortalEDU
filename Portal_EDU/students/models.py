@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 from django.db import models
 from django.conf import settings
+from django.contrib.auth.models import User
 
 class Student(models.Model):
     image_student = models.ImageField(upload_to='files/images/students/%Y/%m/%d/', blank=True)
@@ -19,7 +20,7 @@ class Student(models.Model):
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
     contacts = models.ManyToManyField('contacts.Contact')
     grade = models.ForeignKey('grades.Grade', blank=True, null=True)
-    authentication_student = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
+    authentication_student = models.OneToOneField(User, unique=True, related_name='student')
 
     def __str__(self):
         return self.last_name_student + ", " + self.first_name_student

@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^', include('grades.urls')),
     url(r'^', include('incharge_appointments.urls')),
     url(r'^', include('schools.urls')),
+    url(r'^students/', include('students.urls')),
     url(r'^', include('tasks.urls')),    
     
 )

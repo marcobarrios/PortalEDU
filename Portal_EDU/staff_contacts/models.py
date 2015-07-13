@@ -9,4 +9,4 @@ class StaffContact(models.Model):
 	staff = models.ForeignKey('staffs.Staff')
 
 	def __unicode__(self):
-		return self.contact_staff + " ext " + self.contact_extension_staff
+		return self.contact_type + " " + self.contact_staff + " ext " + self.contact_extension_staff

@@ -9,5 +9,5 @@ class StudentContact(models.Model):
 	student = models.ForeignKey('students.Student')
 
 	def __unicode__(self):
-		return self.contact_student + " ext " + self.contact_extension_student
+		return self.contact_type + " " + self.contact_student + " ext " + self.contact_extension_student
 

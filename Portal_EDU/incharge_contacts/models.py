@@ -10,4 +10,4 @@ class InchargeContact(models.Model):
 	incharge = models.ForeignKey('incharges.Incharge')
 
 	def __unicode__(self):
-		return self.contact_incharge + " ext " + self.contact_extension_incharge
+		return self.contact_type + " " + self.contact_incharge + " ext " + self.contact_extension_incharge

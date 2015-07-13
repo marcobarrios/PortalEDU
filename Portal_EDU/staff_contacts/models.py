@@ -1,3 +1,11 @@
 from django.db import models
 
-# Create your models here.
+class StaffContact(models.Model):
+	contact_staff = models.CharField(max_length=45)
+	contact_extension_staff = models.CharField(max_length=10, blank=True, null=True)
+	enable_staff_contact = models.BooleanField(default=1)
+
+	staff = models.ForeignKey('staffs.Staff')
+
+	def __unicode__(self):
+		return self.contact_staff + " ext " + self.contact_extension_staff

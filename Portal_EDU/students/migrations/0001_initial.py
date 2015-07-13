@@ -2,16 +2,17 @@
 from __future__ import unicode_literals
 
 from django.db import models, migrations
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('genres', '0001_initial'),
         ('blood_types', '0001_initial'),
         ('medical_backgrounds', '0001_initial'),
         ('incharges', '0001_initial'),
-        ('contacts', '0001_initial'),
         ('grades', '0001_initial'),
     ]
 
@@ -29,8 +30,8 @@ class Migration(migrations.Migration):
                 ('home_address_student', models.CharField(max_length=80, null=True, blank=True)),
                 ('neighborhood_student', models.CharField(max_length=50, null=True, blank=True)),
                 ('enable_student', models.BooleanField(default=1)),
+                ('authentication_student', models.OneToOneField(related_name=b'student', to=settings.AUTH_USER_MODEL)),
                 ('blood_type', models.ForeignKey(to='blood_types.BloodType')),
-                ('contacts', models.ManyToManyField(to='contacts.Contact')),
                 ('genre', models.ForeignKey(to='genres.Genre')),
                 ('grade', models.ForeignKey(blank=True, to='grades.Grade', null=True)),
                 ('incharges', models.ManyToManyField(to='incharges.Incharge')),

@@ -18,7 +18,6 @@ class Student(models.Model):
     blood_type = models.ForeignKey('blood_types.BloodType')
     incharges = models.ManyToManyField('incharges.Incharge')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
-    contacts = models.ManyToManyField('contacts.Contact')
     grade = models.ForeignKey('grades.Grade', blank=True, null=True)
     authentication_student = models.OneToOneField(User, unique=True, related_name='student')
 

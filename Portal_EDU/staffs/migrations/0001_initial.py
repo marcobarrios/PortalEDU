@@ -8,12 +8,11 @@ from django.conf import settings
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('staff_types', '0001_initial'),
-        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
         ('genres', '0001_initial'),
-        ('blood_types', '0001_initial'),
+        ('staff_types', '0001_initial'),
         ('medical_backgrounds', '0001_initial'),
-        ('contacts', '0001_initial'),
+        ('blood_types', '0001_initial'),
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
@@ -36,9 +35,8 @@ class Migration(migrations.Migration):
                 ('profession_staff', models.CharField(max_length=45, blank=True)),
                 ('cv_file_staff', models.FileField(upload_to=b'files/staff_cvn/%Y/%m/%d/', blank=True)),
                 ('enable_staff', models.BooleanField(default=1)),
-                ('auth', models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True)),
+                ('authentication_staff', models.OneToOneField(null=True, blank=True, to=settings.AUTH_USER_MODEL)),
                 ('blood_type', models.ForeignKey(to='blood_types.BloodType')),
-                ('contacts', models.ManyToManyField(to='contacts.Contact', null=True, blank=True)),
                 ('genre', models.ForeignKey(to='genres.Genre')),
                 ('medical_backgrounds', models.ManyToManyField(to='medical_backgrounds.MedicalBackGround', null=True, blank=True)),
                 ('staff_type', models.ForeignKey(to='staff_types.StaffType')),

@@ -1,0 +1,13 @@
+{%block titulo%}Registro de estudiantes{% endblock %}
+{%block encabezado%}
+	<h1>Registra un nuevo estudiante</h1>
+{%endblock%}
+{%block contenido%}
+	<form method="POST" action="">{% csrf_token %}
+		<table>
+			{{form_new_student}}
+			{{form_new_user}}
+		</table>
+		<p><input type="submit" value="Registrar"/></p>	
+	</form>
+{%endblock%}

@@ -33,6 +33,7 @@ urlpatterns = patterns('',
     url(r'^', include('planifications.urls')),
     url(r'^', include('schools.urls')),
     url(r'^', include('schedules.urls')),
+    url(r'^students/', include('students.urls')),
     url(r'^', include('tasks.urls')),    
     
 )

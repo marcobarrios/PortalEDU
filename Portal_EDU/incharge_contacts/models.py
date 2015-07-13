@@ -6,6 +6,7 @@ class InchargeContact(models.Model):
 	contact_extension_incharge = models.CharField(max_length=10, blank=True, null=True)
 	enable_incharge_contact = models.BooleanField(default=1)
 
+	contact_type = models.ForeignKey('contact_types.ContactType')
 	incharge = models.ForeignKey('incharges.Incharge')
 
 	def __unicode__(self):

@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import StaffContact
+
+admin.site.register(StaffContact)

@@ -23,7 +23,6 @@ class Staff(models.Model):
     genre = models.ForeignKey('genres.Genre')
     blood_type = models.ForeignKey('blood_types.BloodType')
     medical_backgrounds = models.ManyToManyField('medical_backgrounds.MedicalBackground', blank=True, null=True)
-    contacts = models.ManyToManyField('contacts.Contact', blank=True, null=True)
     authentication_staff = models.OneToOneField(settings.AUTH_USER_MODEL, blank=True, null=True)
 
     def __str__(self):

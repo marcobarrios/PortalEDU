@@ -14,7 +14,6 @@ urlpatterns = patterns('',
     url(r'^', include('blood_types.urls')),
     url(r'^', include('classrooms.urls')),
     url(r'^', include('contact_types.urls')),
-    url(r'^', include('contacts.urls')),
     url(r'^', include('courses.urls')),
     url(r'^', include('entrance_schedules.urls')),
     url(r'^', include('extra_curricular_activities.urls')),
@@ -44,6 +43,9 @@ urlpatterns = patterns('',
     url(r'^', include('student_control_list.urls')),
     url(r'^', include('student_reports.urls')),
     url(r'^', include('subjects.urls')),
+
+    url(r'^students/', include('students.urls')),
+
     url(r'^', include('tasks.urls')),    
     
 )

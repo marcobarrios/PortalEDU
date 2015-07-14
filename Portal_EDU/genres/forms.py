@@ -5,3 +5,4 @@ class GenreForm(forms.ModelForm):
 
 	class Meta:
 		model = Genre
+		exclude = ('enable_genre',)

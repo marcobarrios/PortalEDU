@@ -5,3 +5,4 @@ class PlanificationTypeForm(forms.ModelForm):
 
 	class Meta:
 		model = PlanificationType
+		exclude = ('enable_planification_type',)

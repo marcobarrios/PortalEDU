@@ -5,3 +5,4 @@ class ContactTypeForm(forms.ModelForm):
 
 	class Meta:
 		model = ContactType
+		exclude = ('enable_contact_type',)

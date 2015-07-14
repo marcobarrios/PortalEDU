@@ -5,3 +5,4 @@ class MedicalBackGroundForm(forms.ModelForm):
 
 	class Meta:
 		model = MedicalBackGround
+		exclude = ('enable_medical_background',)

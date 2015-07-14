@@ -5,3 +5,4 @@ class ClassRoomForm(forms.ModelForm):
 
 	class Meta:
 		model = ClassRoom
+		exclude = ('enable_classroom',)

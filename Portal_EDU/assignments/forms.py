@@ -5,3 +5,4 @@ class AssignmentForm(forms.ModelForm):
 
 	class Meta:
 		model = Assignment
+		exclude = ('enable_assigment',)

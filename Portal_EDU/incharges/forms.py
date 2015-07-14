@@ -5,3 +5,4 @@ class InchargeForm(forms.ModelForm):
 
 	class Meta:
 		model = Incharge
+		exclude = ('enable_incharge',)

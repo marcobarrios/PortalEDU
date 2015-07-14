@@ -5,3 +5,4 @@ class GradeForm(forms.ModelForm):
 
 	class Meta:
 		model = Grade
+		exclude = ('enable_grade',)

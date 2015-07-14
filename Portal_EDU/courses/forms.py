@@ -5,3 +5,4 @@ class CourseForm(forms.ModelForm):
 
 	class Meta:
 		model = Course
+		exclude = ('enable_course',)

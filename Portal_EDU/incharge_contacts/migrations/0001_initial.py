@@ -8,6 +8,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('incharges', '0001_initial'),
+        ('contact_types', '0001_initial'),
     ]
 
     operations = [
@@ -18,6 +19,7 @@ class Migration(migrations.Migration):
                 ('contact_incharge', models.CharField(max_length=45)),
                 ('contact_extension_incharge', models.CharField(max_length=10, null=True, blank=True)),
                 ('enable_incharge_contact', models.BooleanField(default=1)),
+                ('contact_type', models.ForeignKey(to='contact_types.ContactType')),
                 ('incharge', models.ForeignKey(to='incharges.Incharge')),
             ],
             options={

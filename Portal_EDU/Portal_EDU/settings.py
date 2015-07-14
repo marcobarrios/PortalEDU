@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'academic_calendars',
     'assignments',
+    'assists',
     'authentication',
     'blood_types',
     'classrooms',

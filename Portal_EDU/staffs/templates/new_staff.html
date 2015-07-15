@@ -1,11 +1,11 @@
-{%block titulo%}Registro de estudiantes{% endblock %}
+{%block titulo%}Registro de staff{% endblock %}
 {%block encabezado%}
 	<h1>Registre un nuevo estudiante</h1>
 {%endblock%}
 {%block contenido%}
 	<form method="POST" action="">{% csrf_token %}
 		<table>
-			{{form_new_student}}
+			{{form_new_staff}}
 			{{form_new_user}}
 		</table>
 		<p><input type="submit" value="Registrar"/></p>	

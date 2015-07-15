@@ -1,23 +1,21 @@
+from django.contrib.auth.forms import UserCreationForm
 from forms import InchargeForm
-from django.http import HttpResponseRedirect
-from django.core.context_processors import csrf
+from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
 def create_incharge(request):
-    if request.POST:
-        form = InchargeForm(request.POST)
-        if form.is_valid():
-            form.save()
-
+    if request.method == 'POST':
+        form_new_incharge = InchargeForm(request.POST)
+        form_new_user = UserCreationForm(request.POST)
+        if form_new_user.is_valid and form_new_incharge.is_valid:
+            form_new_user.save()
+            form_new_incharge.save()
             return HttpResponseRedirect('/')
     else:
-        form = InchargeForm()
+        form_new_incharge = InchargeForm()
+        form_new_user = UserCreationForm()
 
-    args = {}
-    args.update(csrf(request))
-
-    args['form'] = form
-
-    return render_to_response('create_incharge.html', args)
+    return render_to_response('new_incharge.html', { 'form_new_user':form_new_user, 'form_new_incharge':form_new_incharge}, context_instance = RequestContext(request))

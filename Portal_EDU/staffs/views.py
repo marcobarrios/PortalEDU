@@ -1,23 +1,21 @@
+from django.contrib.auth.forms import UserCreationForm
 from forms import StaffForm
-from django.http import HttpResponseRedirect
-from django.core.context_processors import csrf
+from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 
 def create_staff(request):
-    if request.POST:
-        form = StaffForm(request.POST)
-        if form.is_valid():
-            form.save()
-
+    if request.method == 'POST':
+        form_new_staff = StaffForm(request.POST)
+        form_new_user = UserCreationForm(request.POST)
+        if form_new_user.is_valid and form_new_staff.is_valid:
+            form_new_user.save()
+            form_new_staff.save()
             return HttpResponseRedirect('/')
     else:
-        form = StaffForm()
+        form_new_staff = StaffForm()
+        form_new_user = UserCreationForm()
 
-    args = {}
-    args.update(csrf(request))
-
-    args['form'] = form
-
-    return render_to_response('create_staff.html', args)
+    return render_to_response('new_staff.html', { 'form_new_user':form_new_user, 'form_new_staff':form_new_staff}, context_instance = RequestContext(request))

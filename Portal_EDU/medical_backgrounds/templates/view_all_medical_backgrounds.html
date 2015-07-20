@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Enfermedades y Alergias</title>
+</head>
+<body>
+	<h1>Enfermedades y Alergias</h1>
+	<ul>
+        {% for m in medicalbackgrounds %}
+            <li>{{ m }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

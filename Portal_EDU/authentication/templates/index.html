@@ -1,10 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
 <head>
 	<meta charset="UTF-8">
-	<title>Página Principal</title>
+	<title>Login</title>
 </head>
 <body>
-	<h1>Bienvenido Estudiante / Maestro</h1>
+{%block encabezado%}
+	<h1>Colegio</h1>
+{%endblock%}
+{%block contenido%}
+	<form id="form_login" method="POST" action="">{% csrf_token %}
+		<table>{{form_login}}</table>
+		<p><input type="submit" value="Ingresar"/></p>	
+	</form>
+{%endblock%}
 </body>
 </html>

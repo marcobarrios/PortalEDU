@@ -16,7 +16,7 @@ def apolodb_login(request):
 			if access is not None:
 				if access.is_active:
 					login(request,access)
-					return HttpResponseRedirect('/')
+					return render_to_response("index.html", {})
 				else:
 					return render_to_response('not_active.html',context_instance=RequestContext(request))
 			else:
@@ -24,7 +24,3 @@ def apolodb_login(request):
 	else:
 		form_login = AuthenticationForm()
 	return render_to_response('login.html', {'form_login':form_login}, context_instance = RequestContext(request))
-
-
-
-

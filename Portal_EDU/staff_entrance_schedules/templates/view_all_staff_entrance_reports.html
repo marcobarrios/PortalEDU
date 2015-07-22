@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+	<meta charset="UTF-8">
+	<title>Horarios de Entrada/Salida Empleados</title>
+</head>
+<body>
+	<h1>Horarios de Entrada/Salida Empleados</h1>
+	<ul>
+        {% for s in staffentranceschedules %}
+            <li>{{ s }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

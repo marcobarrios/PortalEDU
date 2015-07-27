@@ -23,3 +23,6 @@ class Student(models.Model):
 
     def __str__(self):
         return self.last_name_student + ", " + self.first_name_student
+
+    class Meta:
+        ordering = ["last_name_student"]

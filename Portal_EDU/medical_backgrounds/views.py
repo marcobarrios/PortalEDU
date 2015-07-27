@@ -2,7 +2,7 @@ from forms import MedicalBackGroundForm
 from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
-from .models import MedicalBackground
+from .models import MedicalBackGround
 
 # Create your views here.
 
@@ -24,7 +24,7 @@ def create_medical_background(request):
 
 def view_all_medical_backgrounds(request):
     template_name = "view_all_medical_backgrounds.html"
-    medicalbackgrounds = MedicalBackground.objects.all()
+    medicalbackgrounds = MedicalBackGround.objects.all()
     return render_to_response(template_name, {'medicalbackgrounds':medicalbackgrounds})
 
 def view_medical_background(request, pk):

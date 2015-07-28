@@ -16,12 +16,13 @@ def apolodb_login(request):
 			if access is not None:
 				if access.is_active:
 					login(request,access)
-					if access.groups.filter(name='Admin-Group').exists():	
-						return render_to_response("principal-administrativo.html", {})
-					if access.groups.filter(name='Students-Group').exists():	
-						return render_to_response("principal-estudiante.html", {})
-					if access.groups.filter(name='Staff-Group').exists():
+					if access.groups.filter(name='Staff_Group').exists():
 						return render_to_response("principal-maestros.html", {})
+					if access.groups.filter(name='Admin_Group').exists():
+						return render_to_response("principal-administrativo.html", {})
+					if access.groups.filter(name='Students_Group').exists():
+						return render_to_response("principal-estudiante.html", {})
+					
 				else:
 					return render_to_response('not_active.html',context_instance=RequestContext(request))
 			else:

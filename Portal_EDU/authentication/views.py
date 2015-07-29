@@ -22,7 +22,9 @@ def apolodb_login(request):
 						return render_to_response("principal-administrativo.html", {})
 					if access.groups.filter(name='Students_Group').exists():
 						return render_to_response("principal-estudiante.html", {})
-					
+					if access.groups.filter(name='Incharge_Group').exists():
+						return render_to_response("principal-encargados.html", {})
+									
 				else:
 					return render_to_response('not_active.html',context_instance=RequestContext(request))
 			else:
@@ -30,3 +32,7 @@ def apolodb_login(request):
 	else:
 		form_login = AuthenticationForm()
 	return render_to_response('index.html', {'form_login':form_login}, context_instance = RequestContext(request))
+
+def log_out(request):
+	logout(request)
+	return HttpResponseRedirect('/')

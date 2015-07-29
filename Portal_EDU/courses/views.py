@@ -24,9 +24,14 @@ def create_course(request):
     return render_to_response('create_course.html', args)
 
 def view_all_courses(request):
-    template_name = "view_all_courses.html"
-    courses = Course.objects.all()
-    return render_to_response(template_name, {'courses':courses})
+    
+    if request.user.is_authenticated():
+        template_name = "view_all_courses.html"
+        courses = Course.objects.all()
+        return render_to_response(template_name, {'courses':courses})
+    else:
+        return HttpResponseRedirect('/')
+
 
 def view_course(request, pk):
     template_name = "view_course.html"

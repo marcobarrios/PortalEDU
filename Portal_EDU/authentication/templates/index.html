@@ -38,7 +38,10 @@
 				</div>
 				{%block contenido%}
 				<form id="form_login" method="POST" action="" class="form-Login">{% csrf_token %}
-					<table>{{form_login}}</table>
+					<table>
+						{{form_login.username}}
+						{{form_login.password}}
+					</table>
 						<input type="submit" value="Ingresar" class = "btn"/>	
 				</form>
 				{%endblock%}

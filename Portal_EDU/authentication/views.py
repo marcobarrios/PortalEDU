@@ -1,4 +1,5 @@
 from django.contrib.auth.forms import AuthenticationForm
+from forms import LoginForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response
@@ -8,7 +9,7 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 def apolodb_login(request):
 	if request.method == 'POST':
-		form_login = AuthenticationForm(request.POST)
+		form_login = LoginForm(request.POST)
 		if form_login.is_valid:
 			user = request.POST['username']
 			passwd = request.POST['password']
@@ -29,7 +30,7 @@ def apolodb_login(request):
 			else:
 				return render_to_response('not_user.html', context_instance=RequestContext(request))
 	else:
-		form_login = AuthenticationForm()
+		form_login = LoginForm()
 	return render_to_response('index.html', {'form_login':form_login}, context_instance = RequestContext(request))
 
 def log_out(request):

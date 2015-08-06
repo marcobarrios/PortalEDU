@@ -3,25 +3,30 @@ from django.http import HttpResponseRedirect
 from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from .models import Course
+from django.contrib.auth.decorators  import  login_required
 
 # Create your views here.
 
 def create_course(request):
-    if request.POST:
-        form = CourseForm(request.POST)
-        if form.is_valid():
-            form.save()
+    
+    if request.user.is_authenticated():
+        if request.POST:
+            form = CourseForm(request.POST)
+            if form.is_valid():
+                form.save()
 
-            return HttpResponseRedirect('/courses')
+                return HttpResponseRedirect('/courses')
+        else:
+            form = CourseForm()
+
+        args = {}
+        args.update(csrf(request))
+
+        args['form'] = form
+
+        return render_to_response('create_course.html', args)
     else:
-        form = CourseForm()
-
-    args = {}
-    args.update(csrf(request))
-
-    args['form'] = form
-
-    return render_to_response('create_course.html', args)
+        return HttpResponseRedirect('/')
 
 def view_all_courses(request):
     
@@ -34,6 +39,9 @@ def view_all_courses(request):
 
 
 def view_course(request, pk):
-    template_name = "view_course.html"
-    course = Course.objects.get(pk=pk)
-    return render_to_response(template_name, {'course':course})
+    if request.user.is_authenticated():
+        template_name = "view_course.html"
+        course = Course.objects.get(pk=pk)
+        return render_to_response(template_name, {'course':course})
+    else:
+        return HttpResponseRedirect('/')        

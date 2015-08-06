@@ -30,3 +30,6 @@ def view_incharge(request, pk):
     template_name = "view_incharge.html"
     incharge = Incharge.objects.get(pk=pk)
     return render_to_response(template_name, {'incharge':incharge})
+
+def portal_incharge(request):
+    return render_to_response('principal-encargados.html', context_instance = RequestContext(request))

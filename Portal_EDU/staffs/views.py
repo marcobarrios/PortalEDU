@@ -19,3 +19,9 @@ def create_staff(request):
         form_new_user = UserCreationForm()
 
     return render_to_response('new_staff.html', { 'form_new_user':form_new_user, 'form_new_staff':form_new_staff}, context_instance = RequestContext(request))
+
+def portal_teacher(request):
+    return render_to_response('principal-maestros.html', context_instance = RequestContext(request))
+
+def portal_administrative(request):
+    return render_to_response('principal-administrativo.html', context_instance = RequestContext(request))

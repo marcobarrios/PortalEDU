@@ -20,3 +20,5 @@ def new_student(request):
 
 	return render_to_response('new_student.html', { 'form_new_user':form_new_user, 'form_new_student':form_new_student}, context_instance = RequestContext(request))
 
+def portal_student(request):
+    return render_to_response('principal-estudiante.html', context_instance = RequestContext(request))

@@ -48,39 +48,48 @@
 body{
 	background: #FFFFFA;
 	font-size: 16px;
-	font-family: "century gothic"
+	font-family: "Didact Gothic"
 }
 
 header{
-	width:100%;
-
+	width: 100%;	
 }
 
 header nav{
 	background: #9f0a3a;
+	width: 100%;
+	height: 95px;
+	line-height: 100%;
+	margin: auto;
 }
 
 header nav ul{
-	overflow: hidden;
+	width: 100%;
+	height: 100%
+	line-height:100%;
 	display: flex;
-	justify-content:space-between;
+	justify-content: space-around;
 }
 
 header nav ul li{
 	list-style:none;
+	aling-self:center;
 }
 
 header nav ul li a{
 	text-decoration: none;
 	color: #FFFFFF;
-	padding:20px;
+	padding:10px;
 	display: block;
+	text-transform: capitalize;
+	margin: 10px;
 }
 
 header nav ul li a:hover{
 	background: #00496F;
 	color: white;
 	text-decoration: none;
+	border-radius:5px;
 }
 
 header nav ul li span{
@@ -117,34 +126,45 @@ header nav ul li span{
 	margin-bottom: 1em;
 }
 .ingreso span{
-	
 	text-align: center;
 	color:#fff;
 }
 
-.li-figure{
-	flex-grow:1;
-}
-.li-inicio{
-	flex-grow:0;
-}
-.li-galeria{
-	flex-grow:0;
-}
-.li-contacto{
-	flex-grow:0;
-}
+.li-figure,
 .li-space{
 	flex-grow:1;
 }
+.li-inicio,
+.li-galeria,
+.li-contacto{
+	flex-grow:0;
+	align-self:flex-end;
+}
+
 .li-login{
 	flex-gorw:0;
+	align-self:center;
+}
+.li-login a{
+	margin-top: 0em;
+	background: #00496F;
+	border-radius: 7px;
+}
+.li-login a:hover{
+	background: #00606F;
+	border-radius: 7px;
 }
 .li-figure figure img{
 	width: 100px;
 }
 .modal{
 	padding-top: 10%;
+}
+.user,
+.password,
+.form-btn{
+	text-align: center;
+	margin: 0.5em;
 }
 @media screen and (max-width: 800px){
 	header{
@@ -161,10 +181,21 @@ header nav ul li span{
 	header nav ul{
 		flex-direction: column;
 	}
-	header nav ul li{
-		
-		border-bottom:1px solid rgba(255,255,255,.3);
+	header nav ul{
+		border-bottom: 1px solid rgba(255,255,255,.3);
+		display: inline-flex;
 
+	}
+	header nav ul li a{
+		padding:20px;
+		margin: 0;
+	}
+	.li-inicio,
+	.li-galeria,
+	.li-contacto{
+		border-bottom: 1px solid rgba(255,255,255,.3);
+		flex-grow:0;
+		align-self:auto;
 	}
 	.menu_bar{
 		display: block;

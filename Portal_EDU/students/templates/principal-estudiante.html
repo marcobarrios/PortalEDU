@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
 <head>
 	<meta charset="UTF-8">
 	<title>Principal Estudiantes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="/static/css/style.css" rel="stylesheet" type="text/css">
+	<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Bienvenido Estudiante</h1>
+	<header>
+		<div class="menu_bar">
+			<a href="#" class="bt_menu"><span class ="icon-menu"></span>APOLO</a>
+		
+			<a href="/logout/" class ="bt_login"><span class = "icon-user"></span>Salir</a>
+		</div>
+
+		<nav>
+			<ul>
+				<li class = "li-figure"><figure><img src="/static/image/logo-apolo.png" alt=""></figure></li>
+				<li class = "li-inicio"><a href="#"><span class="icon-home"></span>principal</a></li>
+				<li class = "li-galeria"><a href="#"><span class="icon-images"></span>horario</a></li>
+				<li class = "li-contacto"><a href="#"><span class="icon-phone"></span>calendario</a></li>
+				<li class = "li-space"></li>
+				<li class = "li-login"><a href="/logout/" class = "bt_logout"><span class="icon-user"></span>salir</a></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<h1>estudiantes</h1>
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="/static/js/menu.js"></script>
 </body>
 </html>
